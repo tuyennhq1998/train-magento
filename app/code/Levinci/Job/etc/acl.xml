@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Levinci_Job::Job" title="Job" sortOrder="10">
+					<resource id="Levinci_Job::Job_save" title="Save Job" sortOrder="10"/>
+					<resource id="Levinci_Job::Job_delete" title="Delete Job" sortOrder="20"/>
+					<resource id="Levinci_Job::Job_update" title="Update Job" sortOrder="30"/>
+					<resource id="Levinci_Job::Job_view" title="View Job" sortOrder="40"/>
+				</resource>
+				<resource id="Magento_Backend::stores">
+					<resource id="Magento_Backend::stores_settings">
+						<resource id="Magento_Config::config">
+							<resource id="Levinci_Job::config_levinci_job" title="levinci_job"/>
+						</resource>
+					</resource>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

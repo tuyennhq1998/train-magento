@@ -1,0 +1,13 @@
+type Query {
+    getJobList: JobListOutput @resolver(class:"Levinci\\Job\\Model\\Resolver\\Job") @doc(description: "returnlistjob") @cache(cacheable:false)
+    getJobDetail(id: Int @doc(description:"id")): JobDetailOutput @resolver(class:"Levinci\\Job\\Model\\Resolver\\JobDetail") @doc(description: "return detail") @cache(cacheable:false)
+
+}
+type JobListOutput {
+    store_name: String @doc(description: "")
+    address: String @doc(description: "")
+}
+type JobDetailOutput {
+    store_name: String
+    address: String
+}

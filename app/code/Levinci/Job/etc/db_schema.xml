@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="levinci_job_job" resource="default" engine="innodb" comment="levinci_job_job Table">
+		<column xsi:type="int" name="job_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="job_id"/>
+		</constraint>
+		<column name="store_name" nullable="true" xsi:type="text" comment="store_name"/>
+		<column name="address" nullable="true" xsi:type="text" comment="address"/>
+		<column name="title_requirement" nullable="true" xsi:type="text" comment="title_requirement"/>
+		<column name="number_of_job" nullable="true" xsi:type="text" comment="number_of_job"/>
+		<column name="type_of_job" nullable="true" xsi:type="text" comment="type_of_job"/>
+		<column name="salary" nullable="true" xsi:type="text" comment="salary"/>
+		<column name="expiration" nullable="true" xsi:type="text" comment="expiration"/>
+		<column name="job_description" nullable="true" xsi:type="text" comment="job_description"/>
+		<column name="age_min" nullable="true" xsi:type="int" comment="age_min" identity="false"/>
+		<column name="age_max" nullable="true" xsi:type="int" comment="age_max" identity="false"/>
+		<column name="experience" nullable="true" xsi:type="text" comment="experience"/>
+		<column name="cerificate" nullable="true" xsi:type="text" comment="cerificate"/>
+		<column name="benefit" nullable="true" xsi:type="text" comment="benefit"/>
+	</table>
+</schema>

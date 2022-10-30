@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Levinci\Job\Api\JobRepositoryInterface" type="Levinci\Job\Model\JobRepository"/>
+	<preference for="Levinci\Job\Api\Data\JobInterface" type="Levinci\Job\Model\Job"/>
+	<preference for="Levinci\Job\Api\Data\JobSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Levinci\Job\Model\ResourceModel\Job\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">levinci_job_job</argument>
+			<argument name="resourceModel" xsi:type="string">Levinci\Job\Model\ResourceModel\Job\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="levinci_job_job_listing_data_source" xsi:type="string">Levinci\Job\Model\ResourceModel\Job\Grid\Collection</item>
+			</argument>
+			<argument name="batchRowsCount" xsi:type="array">
+                <item name="configurable" xsi:type="number">100000</item>
+            </argument>
+		</arguments>
+	</type>
+</config>
